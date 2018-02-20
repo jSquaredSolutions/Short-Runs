@@ -1,0 +1,40 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script>
+    function retrieveListItemsInclude() {
+
+        var clientContext = new SP.ClientContext(_spPageContextInfo.siteServerRelativeUrl);
+        var oList = clientContext.get_web().get_lists().getByTitle('Project List');
+
+        var camlQuery = new SP.CamlQuery();
+        camlQuery.set_viewXml('<View><RowLimit>100</RowLimit></View>');
+        this.collListItem = oList.getItems(camlQuery);
+
+        clientContext.load(collListItem, 'Include(Id, LogoURL, DisplayStatus, StudySiteURL)');
+        clientContext.executeQueryAsync(Function.createDelegate(this, this.onQuerySucceeded), Function.createDelegate(
+            this, this.onQueryFailed));
+    }; // end retrieveListItemsInclude
+
+    function onQuerySucceeded(sender, args) {
+        var listItemInfo = '';
+        var listItemEnumerator = collListItem.getEnumerator();
+
+        while (listItemEnumerator.moveNext()) {
+            var oListItem = listItemEnumerator.get_current();
+            if (oListItem.get_item('DisplayStatus') == "Active Page") {
+                $('#logo_content').append('<a target="_blank" href="'+oListItem.get_item('StudySiteURL') +'"><img style="border:none;width:300px;height:75px" src="' +
+                    oListItem.get_item('LogoURL') + '" /></a>');
+            };
+            debugger;
+        }
+    }
+    function onQueryFailed(sender, args) {
+        debugger;
+    }
+    setTimeout(function(){
+        $('#logo_content').empty();
+        retrieveListItemsInclude();
+        }, 1000);
+</script>
+<div id="logo_content">
+</div>
+​​​​​​​​​​
