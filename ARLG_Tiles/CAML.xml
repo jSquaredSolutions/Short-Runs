@@ -1,0 +1,38 @@
+<View>
+    <Query>
+        <Where><Eq><FieldRef Name='DisplayStatus'/><Value Type='Text'>Active Page</Value></Eq></Where> 
+        <OrderBy>
+            <FieldRef Name='Acronym' Ascending='True'>
+            </FieldRef>
+        </OrderBy>
+    </Query>
+</View>
+
+
+<View>
+    <Query> 
+        <Where>
+            <And>
+                <Eq>
+                    <FieldRef Name='ConfigurationCategory'/>
+                    <Value Type='Text'>" + Category + "</Value>
+                </Eq>
+                <Eq>
+                    <FieldRef Name='ConfigurationKey'/>
+                    <Value Type='Text'>" + Key + "</Value>
+                </Eq>
+            </And>
+        </Where> 
+    </Query>
+</View>
+
+<View>
+    <Query> 
+        <Where>
+                <Eq>
+                    <FieldRef Name='ConfigurationKey'/>
+                    <Value Type='Text'>" + Key + "</Value>
+                </Eq>
+        </Where> 
+    </Query>
+</View>
