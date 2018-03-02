@@ -114,8 +114,16 @@ function onQueryFailed2(sender, args) {
 }
 
 function onQuerySucceeded3(sender, args) {
-  debugger;
-  $('#Echo_Ticker_Elements > tr').eq(1).children().eq(3).children('strong').empty().html("<font color='#ffffff' face='Calibri' size='5'>" + collListItem.get_count() + "</font>")
+  var i = 0;
+  var listItemEnumerator = collListItem.getEnumerator();
+  while (listItemEnumerator.moveNext()) {
+    var oListItem = listItemEnumerator.get_current();
+    if (oListItem.get_item("Publication_x0020_Category") == "ECHO-Wide") {
+      i++;
+    }
+    debugger;
+  };
+  $('#Echo_Ticker_Elements > tr').eq(1).children().eq(3).children('strong').empty().html("<font color='#ffffff' face='Calibri' size='5'>" + i + "</font>")
 }
 
 function onQueryFailed3(sender, args) {
@@ -123,7 +131,5 @@ function onQueryFailed3(sender, args) {
 }
 
 $(document).ready(function () {
-  setTimeout(function () {
-    SubmittedConcepts();
-  }, 1000);
+  SP.SOD.executeFunc('sp.js', 'SP.ClientContext', SubmittedConcepts);
 });
