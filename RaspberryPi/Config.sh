@@ -1,3 +1,6 @@
+# Script I built for the Raspberry Pi to get node installed an running
+
+
 sudo apt-get update -y
 sudo apt-get upgrade -y
 sudo apt-get dist-upgrade -y
