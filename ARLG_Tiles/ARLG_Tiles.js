@@ -19,7 +19,7 @@ function onQuerySucceeded(sender, args) {
 
     while (listItemEnumerator.moveNext()) {
         var oListItem = listItemEnumerator.get_current();
-        $('#logo_content').append('<a target="_blank" href="' + oListItem.get_item('StudySiteURL') + '"><img style="border:none;width:300px;height:75px" src="' +
+        $('#logo_content').append('<a target="_blank" href="' + oListItem.get_item('StudySiteURL') + '"><img style="border:none;width:300px;height:75px;margin-bottom:10px;margin-right:10px" src="' +
             oListItem.get_item('LogoURL') + '" /></a>');
     }
 }
