@@ -1,17 +1,17 @@
 /* This .js file can look at the URL string and tell if it's a home.aspx page, or a archived.aspx page (line 8)
 To make this funtion on a page in a content editor web part simple add the following: 
-coming soon
-*/
+Edit page > edit web part > edit html >
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="/sites/arlg/SiteAssets/ARLG_Tiles.js">
+</script><div id="logo_content"></div>
+​​​​​​​​​​​*/
 
 function retrieveListItemsInclude() {
     var clientContext = new SP.ClientContext(_spPageContextInfo.siteServerRelativeUrl);
     var oList = clientContext.get_web().get_lists().getByTitle('Project List');
     var camlQuery = new SP.CamlQuery();
-    if (window.location.href.search("Home-Active.aspx") == -1) {
-        camlQuery.set_viewXml("<View><Query><Where><Eq><FieldRef Name='DisplayStatus'/><Value Type='Text'>Archived Page</Value></Eq></Where><OrderBy><FieldRef Name='Acronym' Ascending='True'></FieldRef></OrderBy></Query></View>");
-    } else {
-        camlQuery.set_viewXml("<View><Query><Where><Eq><FieldRef Name='DisplayStatus'/><Value Type='Text'>Active Page</Value></Eq></Where><OrderBy><FieldRef Name='Acronym' Ascending='True'></FieldRef></OrderBy></Query></View>");
-    }
+    // In the below CAML query we are looking the the Active Page : Catagory
+    camlQuery.set_viewXml("<View><Query><Where><Eq><FieldRef Name='DisplayStatus'/><Value Type='Text'>Active Page</Value></Eq></Where><OrderBy><FieldRef Name='Acronym' Ascending='True'></FieldRef></OrderBy></Query></View>");    
     this.collListItem = oList.getItems(camlQuery);
     clientContext.load(collListItem, 'Include(Id, LogoURL, DisplayStatus, StudySiteURL)');
     clientContext.executeQueryAsync(Function.createDelegate(this, this.onQuerySucceeded), Function.createDelegate(
