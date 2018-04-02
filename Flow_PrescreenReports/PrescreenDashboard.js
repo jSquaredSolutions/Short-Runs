@@ -66,7 +66,7 @@ function JSOMrun() {
     Function.createDelegate(this, this.onQuerySucceeded0),
     Function.createDelegate(this, this.onQueryFailed0)
   );
-}
+};
 
 function onQuerySucceeded0(sender, args) {
   var i = 0;
@@ -84,6 +84,7 @@ function onQuerySucceeded0(sender, args) {
     PrescreenArrayInt++;
     JSOMrun();
   } else {
+    /*
     $("#dashboardContent").append(
       "<tr><td>I1</td><td>" +
         parseInt(
@@ -274,7 +275,8 @@ function onQuerySucceeded0(sender, args) {
             }).length +
           "</td></tr>"
       );
-  }
+  }*/
+  runChartwebpart();
 }
 
 function onQueryFailed0(sender, args) {
