@@ -67,7 +67,7 @@ function JSOMrun() {
     Function.createDelegate(this, this.onQuerySucceeded0),
     Function.createDelegate(this, this.onQueryFailed0)
   );
-};
+}
 
 function onQuerySucceeded0(sender, args) {
   var i = 0;
@@ -84,15 +84,16 @@ function onQuerySucceeded0(sender, args) {
   if (PrescreenArrayInt < 39) {
     PrescreenArrayInt++;
     loadingPercentage = loadingPercentage + 2;
-    $('#pertCounter').empty();
-    $('#pertCounter').append(loadingPercentage);
+    $("#pertCounter").empty();
+    $("#pertCounter").append(loadingPercentage +" % Complete");
     JSOMrun();
   } else {
-  $('#RotationLoader').hide();
-  runChartwebpart();
-  $('#pertCounter').empty();
-};
-};
+    $("#RotationLoader").hide();
+    $("#pertCounter").empty();
+    runChartwebpart();
+    $("#pertCounter").empty();
+  }
+}
 
 function onQueryFailed0(sender, args) {
   debugger;
