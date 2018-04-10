@@ -1,0 +1,51 @@
+<html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882"> 
+<head>
+<title>Default Item Custom</title>
+
+<!--[if gte mso 9]><xml>
+<mso:CustomDocumentProperties>
+<mso:TemplateHidden msdt:dt="string">0</mso:TemplateHidden>
+<mso:MasterPageDescription msdt:dt="string">Displays the default result item template.</mso:MasterPageDescription>
+<mso:ContentTypeId msdt:dt="string">0x0101002039C03B61C64EC4A04F5361F385106603</mso:ContentTypeId>
+<mso:TargetControlType msdt:dt="string">;#SearchResults;#</mso:TargetControlType>
+<mso:HtmlDesignAssociated msdt:dt="string">1</mso:HtmlDesignAssociated>
+<mso:ManagedPropertyMapping msdt:dt="string">'RefinableString00':'RefinableString00','KeywordOWSTEXT':'KeywordOWSTEXT','URL':'URL','Title':'Title','Path':'Path','Description':'Description','EditorOWSUSER':'EditorOWSUSER','LastModifiedTime':'LastModifiedTime','CollapsingStatus':'CollapsingStatus','DocId':'DocId','HitHighlightedSummary':'HitHighlightedSummary','HitHighlightedProperties':'HitHighlightedProperties','FileExtension':'FileExtension','ViewsLifeTime':'ViewsLifeTime','ParentLink':'ParentLink','FileType':'FileType','IsContainer':'IsContainer','SecondaryFileExtension':'SecondaryFileExtension','DisplayAuthor':'DisplayAuthor','KeywordOWSTEXT'</mso:ManagedPropertyMapping>
+<mso:_dlc_DocId msdt:dt="string">3RDMQNRRHUKU-1436666563-220</mso:_dlc_DocId>
+<mso:_dlc_DocIdItemGuid msdt:dt="string">6b428be2-1f3c-4b0d-bb75-08d6a1c38e5d</mso:_dlc_DocIdItemGuid>
+<mso:_dlc_DocIdUrl msdt:dt="string">https://dcricollab.dcri.duke.edu/sites/NIHKR/_layouts/15/DocIdRedir.aspx?ID=3RDMQNRRHUKU-1436666563-220, 3RDMQNRRHUKU-1436666563-220</mso:_dlc_DocIdUrl>
+<mso:HtmlDesignConversionSucceeded msdt:dt="string">True</mso:HtmlDesignConversionSucceeded>
+<mso:HtmlDesignStatusAndPreview msdt:dt="string">https://dcricollab.dcri.duke.edu/sites/NIHKR/_catalogs/masterpage/Display Templates/Search/Item_Default_Custom.html, Conversion successful.</mso:HtmlDesignStatusAndPreview>
+</mso:CustomDocumentProperties>
+</xml><![endif]-->
+</head>
+<body>
+    <div id="Item_Default">
+<!--#_ 
+        if(!$isNull(ctx.CurrentItem) && !$isNull(ctx.ClientControl)){
+            var id = ctx.ClientControl.get_nextUniqueId();
+            var itemId = id + Srch.U.Ids.item;
+            var hoverId = id + Srch.U.Ids.hover;
+			var hoverUrl = "~sitecollection/_catalogs/masterpage/Display Templates/Search/Item_Default_HoverPanel.js";
+            $setResultItem(itemId, ctx.CurrentItem);
+			if(ctx.CurrentItem.IsContainer){
+				ctx.CurrentItem.csr_Icon = Srch.U.getFolderIconUrl();
+			}
+			ctx.currentItem_ShowHoverPanelCallback = Srch.U.getShowHoverPanelCallback(itemId, hoverId, hoverUrl);
+            ctx.currentItem_HideHoverPanelCallback = Srch.U.getHideHoverPanelCallback();
+            debugger;
+_#-->
+            <div id="_#= $htmlEncode(itemId) =#_" style="width: 100%; display: table;" name="Item" data-displaytemplate="DefaultItem" class="ms-srch-item" onmouseover="_#= ctx.currentItem_ShowHoverPanelCallback =#_" onmouseout="_#= ctx.currentItem_HideHoverPanelCallback =#_">
+                <div style="display: table-row">
+                    <div style="display:table-cell;">_#= ctx.CurrentItem.Title =#_</div> <!-- title in this case is the "Name" Column in the KB list -->
+                    <div style="display:table-cell;">_#= ctx.CurrentItem.Path =#_</div> <!-- this is of course the path the file -->
+                    <div style="display:table-cell;">_#= ctx.CurrentItem.Description =#_</div> <!-- This is the description of the document library itself -->                                           
+                    <div id="_#= $htmlEncode(hoverId) =#_" class="ms-srch-hover-outerContainer"></div>
+                </div>
+            </div>     
+            
+<!--#_                    
+        } 
+_#-->
+    </div>
+</body>
+</html>

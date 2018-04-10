@@ -88,10 +88,9 @@ function onQuerySucceeded0(sender, args) {
     $("#pertCounter").append(loadingPercentage +" % Complete");
     JSOMrun();
   } else {
-    $("#RotationLoader").hide();
     $("#pertCounter").empty();
-    runChartwebpart();
-    $("#pertCounter").empty();
+    $("#RotationLoader2").hide();
+    runChartwebpart();  
   }
 }
 
@@ -101,4 +100,6 @@ function onQueryFailed0(sender, args) {
 
 $(document).ready(function() {
   SP.SOD.executeFunc("sp.js", "SP.ClientContext", JSOMrun);
+  $('#CodeTotals').empty();
+  $('#layoutsTable > tbody > tr > td').eq(0).css('width','0.95%');
 });
