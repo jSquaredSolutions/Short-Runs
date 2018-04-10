@@ -101,5 +101,6 @@ function onQueryFailed0(sender, args) {
 $(document).ready(function() {
   SP.SOD.executeFunc("sp.js", "SP.ClientContext", JSOMrun);
   $('#CodeTotals').empty();
+  $('#RotationLoader2').attr("css", { display: "block" });
   $('#layoutsTable > tbody > tr > td').eq(0).css('width','0.95%');
 });
