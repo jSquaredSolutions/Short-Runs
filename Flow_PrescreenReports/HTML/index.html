@@ -1,3 +1,13 @@
+<?DOCTYPE html>
+<html xmlns:mso="urn:schemas-microsoft-com:office:office" xmlns:msdt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+<head>
+<!--[if gte mso 9]><![endif]-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script type="text/javascript" src="/_layouts/1033/init.js"></script>
+<script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/4.0/1/MicrosoftAjax.js"></script>
+<script type="text/javascript" src="/_layouts/sp.core.js"></script>
+<script type="text/javascript" src="/_layouts/SP.js"></script>
+
 PrescreenArray = [
   "LF030",
   "LF052",
@@ -58,6 +68,7 @@ function JSOMrun() {
   var oList = clientContext
     .get_web()
     .get_lists()
+    
     .getByTitle(PrescreenArray[PrescreenArrayInt]);
   var camlQuery = new SP.CamlQuery();
   camlQuery.set_viewXml("<View><RowLimit>4999</RowLimit></View>");
@@ -102,6 +113,18 @@ $(document).ready(function() {
   SP.SOD.executeFunc("sp.js", "SP.ClientContext", JSOMrun);
   $('#CodeTotals').empty();
   $('#RotationLoader2').attr("css", { display: "block" });
-  $('#layoutsTable > tbody > tr > td').eq(0).css('width','0.95%');
-  $('head').append('<meta http-equiv="X-UA-Compatible" content="IE=11">');
 });
+
+
+
+
+
+</head>
+<body>
+<p>HelloWorld</p>
+<p>HelloWorld</p><p>HelloWorld</p><p>HelloWorld</p><p>HelloWorld</p><p>HelloWorld</p>
+<p>HelloWorld</p><p>HelloWorld</p><p>HelloWorld</p><p>HelloWorld</p>
+<p>HelloWorld</p><p>HelloWorld</p><p>HelloWorld</p>
+<p>HelloWorld</p><p>HelloWorld</p><p>HelloWorld</p>
+</body>
+</html>
