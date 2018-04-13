@@ -1,7 +1,7 @@
 /* 
 This script is used to access a specific study (see line 14), unlike PrescreenDashboard.js that will
 iterate over all list specified in the PrescreenArray. 
-This script is not responsible for "rendering" the chart
+This script is NOT responsible for "rendering" the chart, chart.js is reponsible for rendering the chart.
 */
 
 function JSOMrun() {
