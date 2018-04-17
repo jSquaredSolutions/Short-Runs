@@ -25,7 +25,7 @@
             var id = ctx.ClientControl.get_nextUniqueId();
             var itemId = id + Srch.U.Ids.item;
             var hoverId = id + Srch.U.Ids.hover;
-			var hoverUrl = "~sitecollection/_catalogs/masterpage/Display Templates/Search/Item_Default_HoverPanel.js";
+			var hoverUrl = "~sitecollection/_catalogs/masterpage/Display Templates/Search/Item_Default_HoverPanel_Custom.js";
             $setResultItem(itemId, ctx.CurrentItem);
 			if(ctx.CurrentItem.IsContainer){
 				ctx.CurrentItem.csr_Icon = Srch.U.getFolderIconUrl();
@@ -36,9 +36,10 @@
 _#-->
             <div id="_#= $htmlEncode(itemId) =#_" style="width: 100%; display: table;" name="Item" data-displaytemplate="DefaultItem" class="ms-srch-item" onmouseover="_#= ctx.currentItem_ShowHoverPanelCallback =#_" onmouseout="_#= ctx.currentItem_HideHoverPanelCallback =#_">
                 <div style="display: table-row">
-                    <div style="display:table-cell;">_#= ctx.CurrentItem.Title =#_</div> <!-- title in this case is the "Name" Column in the KB list -->
-                    <div style="display:table-cell;">_#= ctx.CurrentItem.Path =#_</div> <!-- this is of course the path the file -->
-                    <div style="display:table-cell;">_#= ctx.CurrentItem.Description =#_</div> <!-- This is the description of the document library itself -->                                           
+                    <div style="display:table-cell;width:25%;max-width:25;word-wrap:break-word">_#= ctx.CurrentItem.Description =#_</div> <!-- title in this case is the "Name" Column in the KB list -->
+                    <div style="display:table-cell;width:25%;max-width:25;word-wrap:break-word">_#= ctx.CurrentItem.Description =#_</div> <!-- deleted comments --> 
+                    <div style="display:table-cell;width:25%;max-width:25;word-wrap:break-word">_#= ctx.CurrentItem.Description =#_</div> <!-- this is of course the path the file -->
+                    <div style="display:table-cell;width:25%;max-width:25;word-wrap:break-word">_#= ctx.CurrentItem.Description =#_</div> <!-- This is the description of the document library itself -->                                           
                     <div id="_#= $htmlEncode(hoverId) =#_" class="ms-srch-hover-outerContainer"></div>
                 </div>
             </div>     

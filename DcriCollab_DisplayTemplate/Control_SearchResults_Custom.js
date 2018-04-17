@@ -1,10 +1,10 @@
 /* This file is currently associated to an HTML file of the same name and is drawing content from it.  Until the files are disassociated, you will not be able to move, delete, rename, or make any other changes to this file. */
 
-function DisplayTemplate_0b566889a15b4ccb9374cb7aad14cf17(ctx) {
+function DisplayTemplate_2e27a310db294f379b8c29a318cb433a(ctx) {
   var ms_outHtml=[];
   var cachePreviousTemplateData = ctx['DisplayTemplateData'];
   ctx['DisplayTemplateData'] = new Object();
-  DisplayTemplate_0b566889a15b4ccb9374cb7aad14cf17.DisplayTemplateData = ctx['DisplayTemplateData'];
+  DisplayTemplate_2e27a310db294f379b8c29a318cb433a.DisplayTemplateData = ctx['DisplayTemplateData'];
 
   ctx['DisplayTemplateData']['TemplateUrl']='~sitecollection\u002f_catalogs\u002fmasterpage\u002fDisplay Templates\u002fSearch\u002fControl_SearchResults_Custom.js';
   ctx['DisplayTemplateData']['TemplateType']='Control';
@@ -12,6 +12,7 @@ function DisplayTemplate_0b566889a15b4ccb9374cb7aad14cf17(ctx) {
   this.DisplayTemplateData = ctx['DisplayTemplateData'];
 
 ms_outHtml.push('',''
+,''
 );
         if (Srch.U.shouldAnimate(ctx.DataProvider)){            
             Srch.U.hideElement(ctx.ClientControl.get_element());
@@ -19,7 +20,18 @@ ms_outHtml.push('',''
         }
 ms_outHtml.push('                    '
 ,'        <div class="ms-srch-result" id="Result" name="Control">'
-); 
+,''
+,''
+,'        <div style="width: 100%; display: table;">'
+,'                <div style="display: table-row">'
+,'                        <div style="display:table-cell;width:25%;background-color:aqua">afds</div>'
+,'                        <div style="display:table-cell;width:25%;background-color:brown">asd</div>'
+,'                        <div style="display:table-cell;width:25%;background-color:blue">adfd</div>'
+,'                        <div style="display:table-cell;width:25%;background-color:chartreuse">adfd</div>'
+,'                </div>'
+,'            </div>'
+,''
+);          
             var arwImageUrl = GetThemedImageUrl('ecbarw.png');
 
             function getDropDownArrowHtml(alttext) { 
@@ -180,7 +192,7 @@ ms_outHtml.push('                    '
 
                 var upScopeHtml = getUpScopeHtmlFunc ? getUpScopeHtmlFunc("UpScopeLinkTopA") : "";
                 if (langPrefHtml || upScopeHtml || oldLanguageMarkupRequired) {    
-ms_outHtml.push('  '
+ms_outHtml.push(''
 ,'                    <div id="UpScopeLinkTop" class="ms-srch-upscope-top" style="display:table;  width: 500px">'
 );
                     if (upScopeHtml) {
@@ -195,11 +207,11 @@ ms_outHtml.push(''
                     }
                     if (langPrefHtml) {
 ms_outHtml.push(''
-,'                        <div style="display: table-cell">', langPrefHtml ,'</div>'
+,'                        <div style="display: none">', langPrefHtml ,'</div>'
 );
                     } else if (oldLanguageMarkupRequired) {
 ms_outHtml.push(''
-,'                        <div style="display: table-cell">'
+,'                        <div style="display: none">'
 );
                                var languageDropDownClassNoEncode = "";
                                if (ctx.ClientControl.get_repositionLanguageDropDown()) {
@@ -237,7 +249,9 @@ ms_outHtml.push('                    '
                     var resultHeaderClassNoEncode = "ms-metadata";
                     var availableSorts = ctx.DataProvider.get_availableSorts();
 ms_outHtml.push(''
-,'                    <div id="ResultHeader" class="', resultHeaderClassNoEncode ,'">'
+,''
+,'<div id="ResultHeader" class="', resultHeaderClassNoEncode ,'">'
+,'      '
 ,'                        <ul id="Actions">                    '
 ,'                                <li id="Sortby">'
 ,'                                    <select title="', $htmlEncode(Srch.Res.rs_SortDescription) ,'" id="SortbySel" onchange="$getClientControl(this).sortOrRank(this.value);">'
@@ -499,18 +513,18 @@ ms_outHtml.push(''
   ctx['DisplayTemplateData'] = cachePreviousTemplateData;
   return ms_outHtml.join('');
 }
-function RegisterTemplate_0b566889a15b4ccb9374cb7aad14cf17() {
+function RegisterTemplate_2e27a310db294f379b8c29a318cb433a() {
 
 if ("undefined" != typeof (Srch) &&"undefined" != typeof (Srch.U) &&typeof(Srch.U.registerRenderTemplateByName) == "function") {
-  Srch.U.registerRenderTemplateByName("Control_SearchResults", DisplayTemplate_0b566889a15b4ccb9374cb7aad14cf17);
+  Srch.U.registerRenderTemplateByName("Control_SearchResults", DisplayTemplate_2e27a310db294f379b8c29a318cb433a);
 }
 
 if ("undefined" != typeof (Srch) &&"undefined" != typeof (Srch.U) &&typeof(Srch.U.registerRenderTemplateByName) == "function") {
-  Srch.U.registerRenderTemplateByName("~sitecollection\u002f_catalogs\u002fmasterpage\u002fDisplay Templates\u002fSearch\u002fControl_SearchResults_Custom.js", DisplayTemplate_0b566889a15b4ccb9374cb7aad14cf17);
+  Srch.U.registerRenderTemplateByName("~sitecollection\u002f_catalogs\u002fmasterpage\u002fDisplay Templates\u002fSearch\u002fControl_SearchResults_Custom.js", DisplayTemplate_2e27a310db294f379b8c29a318cb433a);
 }
 
 }
-RegisterTemplate_0b566889a15b4ccb9374cb7aad14cf17();
+RegisterTemplate_2e27a310db294f379b8c29a318cb433a();
 if (typeof(RegisterModuleInit) == "function" && typeof(Srch.U.replaceUrlTokens) == "function") {
-  RegisterModuleInit(Srch.U.replaceUrlTokens("~sitecollection\u002f_catalogs\u002fmasterpage\u002fDisplay Templates\u002fSearch\u002fControl_SearchResults_Custom.js"), RegisterTemplate_0b566889a15b4ccb9374cb7aad14cf17);
+  RegisterModuleInit(Srch.U.replaceUrlTokens("~sitecollection\u002f_catalogs\u002fmasterpage\u002fDisplay Templates\u002fSearch\u002fControl_SearchResults_Custom.js"), RegisterTemplate_2e27a310db294f379b8c29a318cb433a);
 }
