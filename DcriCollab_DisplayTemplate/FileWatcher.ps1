@@ -17,8 +17,13 @@ Function Register-Watcher {
         $name = $Event.SourceEventArgs.Name
         $changeType = $Event.SourceEventArgs.ChangeType
         $timeStamp = $Event.TimeGenerated
-        Write-Host "The file $name was $changeType at $timeStamp at path: $path"
-        Add-PnPFile -Path $path -Folder "_catalogs/masterpage/Display Templates/Search"
+        If ($name -eq "Control_SearchResults_Custom.html" -Or $name -eq "Item_Default_Custom.html" -Or $name -eq "Item_Default_HoverPanel_Custom.html") {
+            Write-Host "The file $name was $changeType at $timeStamp at path: $path"
+            Add-PnPFile -Path $path -Folder "_catalogs/masterpage/Display Templates/Search"
+        } elseIf ($name -eq "CustomSearch.js") {
+            Write-Host "The file $name was $changeType at $timeStamp at path: $path"
+            Add-PnPFile -Path $path -Folder "SiteAssets"
+        };  
     ')
 
     Register-ObjectEvent $Watcher "Changed" -Action $changeAction

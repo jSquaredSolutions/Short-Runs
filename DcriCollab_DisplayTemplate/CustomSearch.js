@@ -6,5 +6,3 @@ $(document).ready(function () {
     $('#MSOZoneCell_WebPartctl00_ctl40_g_6ddb14a5_eb4a_49f7_889c_352f4e26f753').hide();
     $('#unselShortList').css('margin-left','10px');
 });
-
-// deleted comment 
