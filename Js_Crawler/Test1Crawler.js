@@ -1,7 +1,10 @@
 var Crawler = require("js-crawler");
 var crawler = new Crawler().configure({
+    shouldCrawl: function (url) {
+        return url.indexOf("www.google.com") > 0;
+    }, 
     maxRequestsPerSecond: 0.5,
-    depth: 1000
+    depth: 2
 });
 crawler.crawl({
     url: "http://www.google.com",
