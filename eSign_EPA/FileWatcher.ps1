@@ -1,8 +1,8 @@
-$AdminName = "jtm27"
-$Pass = Get-Content C:\Users\jtm27\cred.txt | ConvertTo-SecureString
+$AdminName = "mcfarland.jeffrey@epa.gov"
+$Pass = Get-Content C:\Users\jmcfar03\creds.txt | ConvertTo-SecureString
 $Cred = new-object -typename System.Management.Automation.PSCredential -argumentlist $AdminName, $Pass
-Connect-PnPOnline -Url https://dcricollab.dcri.duke.edu/sites/NIHKR -Credentials $Cred
-$folder = "C:\Users\jtm27\Desktop\Short-Runs\DcriCollab_DisplayTemplate"
+Connect-PnPOnline -Url https://usepa.sharepoint.com/sites/OEI_Development/esign -Credentials $Cred
+$folder = "C:\Users\jmcfar03\Desktop\Short-Runs\eSign_EPA"
 Function Register-Watcher {
     param ($folder)
     $filter = "*.*"
@@ -17,16 +17,13 @@ Function Register-Watcher {
         $name = $Event.SourceEventArgs.Name
         $changeType = $Event.SourceEventArgs.ChangeType
         $timeStamp = $Event.TimeGenerated
-        If ($name -eq "Control_SearchResults_Custom.html" -Or $name -eq "Item_Default_Custom.html" -Or $name -eq "Item_Default_HoverPanel_Custom.html") {
-            Write-Host "The file $name was $changeType at $timeStamp at path: $path"
-            Add-PnPFile -Path $path -Folder "_catalogs/masterpage/Display Templates/Search"
-        } elseIf ($name -eq "CustomSearch.js") {
+        If ($name -eq "customEsign.js") {
             Write-Host "The file $name was $changeType at $timeStamp at path: $path"
             Add-PnPFile -Path $path -Folder "SiteAssets"
-        };  
+        }
     ')
 
     Register-ObjectEvent $Watcher "Changed" -Action $changeAction
 }
 
- Register-Watcher "C:\Users\jtm27\Desktop\Short-Runs\DcriCollab_DisplayTemplate"
+ Register-Watcher "C:\Users\jmcfar03\Desktop\Short-Runs\eSign_EPA"
