@@ -33,5 +33,4 @@ lightHtml = '<div><div style="display:inline-flex"><input style="width:30px" val
     '<div><div style="display:inline-flex"><input style="width:30px" type="text" id="signId"><br/>' +
     '<input type="text" id="signTitle"><br>' +
     '<input type="text" style="width:200px" Id="signEmail"><br></div></div>' +
-    '<div><img src="/sites/OEI_Development/esign/SiteAssets/check-mark-animated-gif-3.gif" alt="" /></div>'+
     '<input type="button" onclick="GetUserDetails()" style="margin-left:0px" value="e-Sign" />' 
