@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "repeat-table-wp-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/repeatTableWp/RepeatTableWpWebPart.js",
+          "manifest": "./src/webparts/repeatTableWp/RepeatTableWpWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "RepeatTableWpWebPartStrings": "lib/webparts/repeatTableWp/loc/{locale}.js"
+  }
+}

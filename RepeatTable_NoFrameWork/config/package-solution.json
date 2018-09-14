@@ -1,0 +1,13 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "repeat-table-no-frame-work-client-side-solution",
+    "id": "5959028c-4d32-4dcb-be99-1d0f21a73e14",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true
+  },
+  "paths": {
+    "zippedPackage": "solution/repeat-table-no-frame-work.sppkg"
+  }
+}

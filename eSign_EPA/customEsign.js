@@ -11,10 +11,10 @@ function GetUserDetails() {
             var signId = data.d.Id;
             var signEmail = data.d.Email;
             var signTitle = data.d.Title;
+            // Get user information
             $('#signId').val(signId);
             $('#signEmail').val(signEmail);
             $('#signTitle').val(signTitle);
-
         },
         error: function (data) {
             debugger;
