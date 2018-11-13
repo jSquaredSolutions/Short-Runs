@@ -25,6 +25,9 @@ function GetUserDetails() {
 
 $(document).ready(function () {
     $('#mainEsignContent').append(lightHtml);
+    $('#sideNavBox').css('display','none');
+    $('#contentBox').css('margin-left','0px');
+    $('.o_En8XcGogcxTM91U0_0.av_En8XcGogcxTM91U0_0').empty();
 });
 
 lightHtml = '<div><div style="display:inline-flex"><input style="width:30px" value="ID"><br/>' +
