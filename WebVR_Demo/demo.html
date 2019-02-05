@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Hello, WebVR! • A-Frame</title>
+    <meta name="description" content="Hello, WebVR! • A-Frame">
+    <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene background="color: #ECECEC">
+      <a-sphere position="0 1 -1" radius=".05" color="#EF2D5E" shadow></a-sphere>
+      <a-sphere position="0 -1 -1" radius=".05" color="#EF2D5E" shadow></a-sphere>
+      <a-plane position="0 0 -4" rotation="-90 0 0" width="40" height="40" color="#7BC8A4" shadow></a-plane>
+      <a-text font="kelsonsans" value="Puy de Sancy, France" width="6" position="-2.5 0.25 -1.5"
+      rotation="0 15 0"></a-text>
+      <a-sky color="#6EBAA7"></a-sky>
+      <a-camera>
+          <a-cursor></a-cursor>
+          <!-- Or <a-entity cursor></a-entity> -->
+        </a-camera>
+    </a-scene>
+  </body>
+</html>
